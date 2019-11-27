@@ -141,6 +141,7 @@ namespace TrashCollectorProject.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
+            ViewBag.Name = context.Roles.ToList();
             return View();
         }
 
@@ -166,7 +167,7 @@ namespace TrashCollectorProject.Controllers
                     //Assign Role to user Here       
                     await this.UserManager.AddToRoleAsync(user.Id, model.UserRoles);
                     //Ends Here     
-                    return RedirectToAction("Index", "Users");
+                    return RedirectToAction("Index", "Home");
                 }
 
                 AddErrors(result);
