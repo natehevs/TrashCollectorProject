@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
@@ -13,6 +14,7 @@ namespace TrashCollectorProject.Controllers
     public class CustomersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        
 
         // GET: Customers
         public ActionResult Index()
@@ -50,6 +52,8 @@ namespace TrashCollectorProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                string userId = User.Identity.GetUserId();
+                customer.ApplicationId = userId;
                 db.Customers.Add(customer);
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -184,6 +184,10 @@
     <Compile Include="Migrations\201911261732568_FixingEditCustomerController.Designer.cs">
       <DependentUpon>201911261732568_FixingEditCustomerController.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201911271625283_foreignkeyadded.cs" />
+    <Compile Include="Migrations\201911271625283_foreignkeyadded.Designer.cs">
+      <DependentUpon>201911271625283_foreignkeyadded.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -283,6 +287,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911261732568_FixingEditCustomerController.resx">
       <DependentUpon>201911261732568_FixingEditCustomerController.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911271625283_foreignkeyadded.resx">
+      <DependentUpon>201911271625283_foreignkeyadded.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
