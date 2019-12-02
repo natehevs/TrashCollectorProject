@@ -30,7 +30,7 @@ namespace TrashCollectorProject.Models
         public double balance { get; set; }
         [DisplayName("Suspended")]
         public bool isSuspended { get; set; }
-        [DisplayName("Extra Pickup Date")]
+        [DisplayName("Extra Pickup Date(Ex:MM/DD/YYYY)")]
         public string extraPickupDate { get; set; }
         [ForeignKey("ApplicationUser")]
         public string ApplicationId { get; set; }
