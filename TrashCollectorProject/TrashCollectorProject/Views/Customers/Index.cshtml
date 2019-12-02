@@ -36,7 +36,10 @@
             @Html.DisplayNameFor(model => model.balance)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.isSuspended)
+            @Html.DisplayNameFor(model => model.startSuspended)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.endSuspended)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.extraPickupDate)
@@ -45,43 +48,46 @@
     </tr>
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.firstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.lastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.streetAddress)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.city)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.state)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.zipcode)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.pickupDay)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.balance)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.isSuspended)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.extraPickupDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.firstName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.lastName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.streetAddress)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.city)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.state)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.zipcode)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.pickupDay)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.balance)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.startSuspended)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.endSuspended)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.extraPickupDate)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+    </td>
+</tr>
 }
 
 </table>

@@ -48,7 +48,7 @@ namespace TrashCollectorProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,firstName,lastName,streetAddress,city,state,zipcode,pickupDay,balance,isSuspended,extraPickupDate")] Customer customer)
+        public ActionResult Create([Bind(Include = "Id,firstName,lastName,streetAddress,city,state,zipcode,pickupDay,balance,ApplicationId,startSuspended,endSuspended,extraPickupDate")] Customer customer)
         {
             if (ModelState.IsValid)
             {
@@ -82,7 +82,7 @@ namespace TrashCollectorProject.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,firstName,lastName,streetAddress,city,state,zipcode,pickupDay,balance,isSuspended,extraPickupDate")] Customer customer)
+        public ActionResult Edit([Bind(Include = "Id,firstName,lastName,streetAddress,city,state,zipcode,pickupDay,balance,startSuspended,endSuspended,extraPickupDate")] Customer customer)
         {
             if (ModelState.IsValid)
             {

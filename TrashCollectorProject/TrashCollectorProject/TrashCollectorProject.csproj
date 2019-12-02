@@ -192,6 +192,11 @@
     <Compile Include="Migrations\201911271738085_addedcodefromslacktocreateemployeecontroller.Designer.cs">
       <DependentUpon>201911271738085_addedcodefromslacktocreateemployeecontroller.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201912021507427_suspendStart\EndDate.cs" />
+    <Compile Include="Migrations\201912021508043_supsendedStartEndDate.cs" />
+    <Compile Include="Migrations\201912021508043_supsendedStartEndDate.Designer.cs">
+      <DependentUpon>201912021508043_supsendedStartEndDate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -297,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201911271738085_addedcodefromslacktocreateemployeecontroller.resx">
       <DependentUpon>201911271738085_addedcodefromslacktocreateemployeecontroller.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912021508043_supsendedStartEndDate.resx">
+      <DependentUpon>201912021508043_supsendedStartEndDate.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
