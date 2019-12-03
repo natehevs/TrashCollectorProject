@@ -18,10 +18,12 @@ namespace TrashCollectorProject.Controllers
         // GET: Employees
         public ActionResult Index()
         {
+            DayOfWeek currentDay = DateTime.Today.DayOfWeek;
             string userId = User.Identity.GetUserId();
-            var currentEmployee = db.Employees.Where(e => e.ApplicationId == userId).FirstOrDefault();
-            var customer = db.Customers.Where(e => e.zipcode == currentEmployee.zipcode).Where(d => d.pickupDay == DateTime.Today.DayOfWeek.ToString()).ToList();
-            return View(customer);
+            Employee currentEmployee = db.Employees.Where(e => e.ApplicationId == userId).Single();
+            List<Customer> sameZipCustomer = db.Customers.Where(e => e.zipcode == currentEmployee.zipcode).ToList();
+            List<Customer> sameDayZipcode = sameZipCustomer.Where(e => e.pickupDay == currentDay.ToString()).ToList();
+            return View("Index", sameDayZipcode);
         }
 
         // GET: Employees/Details/5
