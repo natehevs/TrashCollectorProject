@@ -20,10 +20,28 @@ namespace TrashCollectorProject.Controllers
         {
             DayOfWeek currentDay = DateTime.Today.DayOfWeek;
             string userId = User.Identity.GetUserId();
-            Employee currentEmployee = db.Employees.Where(e => e.ApplicationId == userId).Single();
+            Employee currentEmployee = db.Employees.Where(e => e.ApplicationId == userId).SingleOrDefault();
             List<Customer> sameZipCustomer = db.Customers.Where(e => e.zipcode == currentEmployee.zipcode).ToList();
             List<Customer> sameDayZipcode = sameZipCustomer.Where(e => e.pickupDay == currentDay.ToString()).ToList();
             return View("Index", sameDayZipcode);
+        }
+
+        [HttpPost]
+        public ActionResult Filter(string FilterDayOfWeek)
+        {
+            string userid = User.Identity.GetUserId();
+            var currentEmployee = db.Employees.Where(e => e.ApplicationId == userid).FirstOrDefault();
+            var customer = db.Customers.Where(c => c.zipcode == currentEmployee.zipcode).Where(c => c.pickupDay == FilterDayOfWeek.ToString()).ToList();
+            return View(customer);
+        }
+
+        public ActionResult DaySelector(string day)
+        {
+            string userId = User.Identity.GetUserId();
+            Employee employeeInDb = db.Employees.Where(e => e.ApplicationId == userId).Single();
+            List<Customer> customersInZip = db.Customers.Where(c => c.zipcode == employeeInDb.zipcode).ToList();
+            List<Customer> customersInZipOnDay = customersInZip.Where(c => c.pickupDay == day).ToList();
+            return View("DaySelector", customersInZipOnDay);
         }
 
         // GET: Employees/Details/5
@@ -38,7 +56,7 @@ namespace TrashCollectorProject.Controllers
             {
                 return HttpNotFound();
             }
-            return View(employee);
+            return View("Details", employee);
         }
 
         // GET: Employees/Create

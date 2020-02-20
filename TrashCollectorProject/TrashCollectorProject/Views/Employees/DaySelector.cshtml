@@ -1,16 +1,13 @@
 ﻿@model IEnumerable<TrashCollectorProject.Models.Customer>
-
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "DaySelector";
 }
 
-<h2>Index of Customers Today</h2>
+<h2>Choose A Day To View Customers</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
 <table class="table">
+
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.firstName)
@@ -44,15 +41,24 @@
         </tr>
     }
 
-    <div>
-        @Html.ActionLink("Monday", "DaySelector")
-        @Html.ActionLink("Tuesday", "DaySelector")
-        @Html.ActionLink("Wednesday", "DaySelector")
-        @Html.ActionLink("Thursday", "DaySelector")
-        @Html.ActionLink("Friday", "DaySelector")
-        @Html.ActionLink("Saturday", "DaySelector")
-        @Html.ActionLink("Sunday", "DaySelector")
-
-    </div>
-
 </table>
+
+<div>
+    @Html.ActionLink("Monday", "DaySelector")
+    @Html.ActionLink("Tuesday", "DaySelector")
+    @Html.ActionLink("Wednesday", "DaySelector")
+    @Html.ActionLink("Thursday", "DaySelector")
+    @Html.ActionLink("Friday", "DaySelector")
+    @Html.ActionLink("Saturday", "DaySelector")
+    @Html.ActionLink("Sunday", "DaySelector")
+
+</div>
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
