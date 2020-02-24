@@ -1,0 +1,31 @@
+﻿@model TrashCollectorProject.Models.Customer
+@{
+    ViewBag.Title = "DisplayPins";
+}
+
+<h2>Customer Location</h2>
+
+<style>
+    #map {
+        width: 100%;
+    }
+</style>
+
+<div id="map" style="height:500px"></div>
+<script>
+    var map;
+    function initMap() {
+        var myLatLng = { lat: 43.101306, lng: -88.382168 }
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 12,
+            center: myLatLng
+
+        });
+        var customerLocation = new google.maps.Marker({
+            position: { lat: 42.97353, lng: -87.8565108 },
+            map: map
+        });
+    }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA8X1yD-50Btt51Rwj59vLd2YqO2cNN2z8&callback=initMap"
+        type="text/javascript"></script>

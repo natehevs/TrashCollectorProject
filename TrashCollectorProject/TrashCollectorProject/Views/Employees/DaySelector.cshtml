@@ -37,6 +37,7 @@
                 @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
                 @Html.ActionLink("Details", "Details", new { id = item.Id }) |
                 @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                @Html.ActionLink("See on a map", "DisplayPins", "Customers")
             </td>
         </tr>
     }
@@ -44,13 +45,14 @@
 </table>
 
 <div>
-    @Html.ActionLink("Monday", "DaySelector")
-    @Html.ActionLink("Tuesday", "DaySelector")
-    @Html.ActionLink("Wednesday", "DaySelector")
-    @Html.ActionLink("Thursday", "DaySelector")
-    @Html.ActionLink("Friday", "DaySelector")
-    @Html.ActionLink("Saturday", "DaySelector")
-    @Html.ActionLink("Sunday", "DaySelector")
+    @Html.ActionLink("Monday", "DaySelector", "Employees", new { day = "Monday" }, null)
+    @Html.ActionLink("Tuesday", "DaySelector", "Employees", new { day = "Tuesday" }, null)
+    @Html.ActionLink("Wednesday", "DaySelector", "Employees", new { day = "Wednesday" }, null)
+    @Html.ActionLink("Thursday", "DaySelector", "Employees", new { day = "Thursday" }, null)
+    @Html.ActionLink("Friday", "DaySelector", "Employees", new { day = "Friday" }, null)
+    @Html.ActionLink("Saturday", "DaySelector", "Employees", new { day = "Saturday" }, null)
+    @Html.ActionLink("Sunday", "DaySelector", "Employees", new { day = "Sunday" }, null)
+
 
 </div>
 

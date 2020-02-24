@@ -127,5 +127,10 @@ namespace TrashCollectorProject.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult DisplayPins()
+        {
+            return View();
+        }
     }
 }

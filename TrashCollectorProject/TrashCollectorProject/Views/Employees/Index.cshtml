@@ -44,15 +44,16 @@
         </tr>
     }
 
-    <div>
-        @Html.ActionLink("Monday", "DaySelector")
-        @Html.ActionLink("Tuesday", "DaySelector")
-        @Html.ActionLink("Wednesday", "DaySelector")
-        @Html.ActionLink("Thursday", "DaySelector")
-        @Html.ActionLink("Friday", "DaySelector")
-        @Html.ActionLink("Saturday", "DaySelector")
-        @Html.ActionLink("Sunday", "DaySelector")
+<div>
+    @Html.ActionLink("Monday", "DaySelector", "Employees", new { day = "Monday" }, null)
+    @Html.ActionLink("Tuesday", "DaySelector", "Employees", new { day = "Tuesday" }, null)
+    @Html.ActionLink("Wednesday", "DaySelector", "Employees", new { day = "Wednesday" }, null)
+    @Html.ActionLink("Thursday", "DaySelector", "Employees", new { day = "Thursday" }, null)
+    @Html.ActionLink("Friday", "DaySelector", "Employees", new { day = "Friday" }, null)
+    @Html.ActionLink("Saturday", "DaySelector", "Employees", new { day = "Saturday" }, null)
+    @Html.ActionLink("Sunday", "DaySelector", "Employees", new { day = "Sunday" }, null)
 
-    </div>
+
+</div>
 
 </table>

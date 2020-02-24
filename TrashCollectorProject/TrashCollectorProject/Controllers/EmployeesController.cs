@@ -38,7 +38,7 @@ namespace TrashCollectorProject.Controllers
         public ActionResult DaySelector(string day)
         {
             string userId = User.Identity.GetUserId();
-            Employee employeeInDb = db.Employees.Where(e => e.ApplicationId == userId).Single();
+            Employee employeeInDb = db.Employees.Where(e => e.ApplicationId == userId).SingleOrDefault();
             List<Customer> customersInZip = db.Customers.Where(c => c.zipcode == employeeInDb.zipcode).ToList();
             List<Customer> customersInZipOnDay = customersInZip.Where(c => c.pickupDay == day).ToList();
             return View("DaySelector", customersInZipOnDay);
